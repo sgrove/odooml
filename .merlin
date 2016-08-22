@@ -1,0 +1,5 @@
+B _build/**
+FLG -w +a-4-40..42-44-45-48-39 -short-paths
+
+PKG lwt lwt.ppx ounit containers
+PKG tgls tsdl result gg

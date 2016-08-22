@@ -1,0 +1,15 @@
+deps::
+	opam switch -A 4.02.3 odooml
+	opam install -y oasis merlin lwt ounit ocp-indent utop containers ctypes tgls tsdl gg
+
+switch::
+	opam switch -A 4.02.3 odooml
+	eval `opam config env`
+
+tri3:
+	ocamlfind ocamlc -linkpkg -package result,tsdl,tgls.tgl3 -o trigl3.byte src/trigl3.ml
+	ocamlfind ocamlopt -linkpkg -package result,tsdl,tgls.tgl3 -o trigl3.native src/trigl3.ml
+
+tri4:
+	ocamlfind ocamlc -linkpkg -package result,tsdl,tgls.tgl4,gg -o trigl4.byte src/trigl4.ml
+	ocamlfind ocamlopt -linkpkg -package result,tsdl,tgls.tgl4,gg -o trigl4.native src/trigl4.ml
